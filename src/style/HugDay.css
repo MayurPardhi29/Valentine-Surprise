@@ -1,0 +1,196 @@
+/* Base styling for the page with a starry night background */
+.hug-day-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: radial-gradient(circle, #0b0f33 60%, #000000 100%);
+    overflow: hidden;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+    font-family: 'Georgia', serif;
+    animation: bgTransition 10s forwards 2s;
+    position: relative;
+  }
+  
+  /* Starry background animation */
+  .hug-day-page::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(2px 2px at 20% 30%, #ffffff 40%, transparent 40%),
+                radial-gradient(2px 2px at 50% 70%, #ffffff 40%, transparent 40%),
+                radial-gradient(2px 2px at 80% 20%, #ffffff 40%, transparent 40%),
+                radial-gradient(1px 1px at 30% 50%, #ffffff 40%, transparent 40%);
+    background-size: 800px 800px;
+    animation: twinkle 4s infinite alternate;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  /* Title styling */
+  .title {
+    font-size: 36px;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease forwards 1s;
+    z-index: 2;
+  }
+  
+  /* Container for the hearts */
+  .hearts-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 20px 0;
+    z-index: 2;
+  }
+  
+  /* Base styling for each heart */
+  .heart {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    clip-path: polygon(50% 0%, 100% 38%, 85% 100%, 50% 85%, 15% 100%, 0% 38%);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    transform: scale(1);
+    transition: transform 1s ease;
+    opacity: 0;
+  }
+  
+  /* Blue heart slides in from the left */
+  .blue-heart {
+    background: linear-gradient(145deg, #85baff, #004c99);
+    left: -200px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-20deg);
+    animation: blueHug 4s forwards 2s;
+    z-index: 2;
+  }
+  
+  /* Pink heart slides in from the right */
+  .pink-heart {
+    background: linear-gradient(145deg, #ff85a2, #ff4d7d);
+    right: -200px;
+    top: 50%;
+    transform: translateY(-50%) rotate(20deg);
+    animation: pinkHug 4s forwards 2s;
+    z-index: 2;
+  }
+  
+  /* Central heart pops in after the hug */
+  .central-heart {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    font-size: 50px;
+    opacity: 0;
+    animation: heartPop 1.5s forwards 5s;
+    z-index: 3;
+  }
+  
+  /* Background transition with smoother gradient colors */
+  @keyframes bgTransition {
+    0% {
+      background: radial-gradient(circle, #0b0f33 60%, #000000 100%);
+    }
+    30% {
+      background: radial-gradient(circle, #1a2159 50%, #0b0f33 100%);
+    }
+    60% {
+      background: radial-gradient(circle, #4b5d94 40%, #1a2159 100%);
+    }
+    80% {
+      background: radial-gradient(circle, #8c92b4 30%, #4b5d94 100%);
+    }
+    100% {
+      background: radial-gradient(circle, #f79d65 40%, #ffedbc 100%);
+    }
+  }
+  
+  /* Blue heart animation: slides in with a slight rotation */
+  @keyframes blueHug {
+    0% {
+      left: -200px;
+      opacity: 0;
+      transform: translateY(-50%) rotate(-20deg);
+    }
+    100% {
+      left: 40%;
+      opacity: 1;
+      transform: translateY(-50%) rotate(-5deg) scale(1.1);
+    }
+  }
+  
+  /* Pink heart animation: slides in with a slight rotation */
+  @keyframes pinkHug {
+    0% {
+      right: -200px;
+      opacity: 0;
+      transform: translateY(-50%) rotate(20deg);
+    }
+    100% {
+      right: 40%;
+      opacity: 1;
+      transform: translateY(-50%) rotate(5deg) scale(1.1);
+    }
+  }
+  
+  /* Central heart popping in */
+  @keyframes heartPop {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.5);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+  
+  /* Twinkling star animation */
+  @keyframes twinkle {
+    0% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 0.5;
+    }
+  }
+  
+  /* Fade in effect for the title */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* Message styling */
+  .message {
+    font-size: 20px;
+    margin-top: 20px;
+    max-width: 600px;
+    line-height: 1.4;
+    animation: fadeIn 2s ease forwards 3s;
+    z-index: 2;
+    margin-bottom: 50px;
+  }
+  
+  .centered-image {
+    display: block;
+    max-width: 100%;
+    max-width: 350px;
+    max-height: 70vh; /* Ensures the image fits within the viewport height */
+    margin: 0 auto;
+    object-fit: cover;
+  }
+  

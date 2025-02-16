@@ -1,0 +1,336 @@
+/* Valentine Page */
+.valentine-page {
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  min-height: 100vh;
+  animation: fadeIn 1s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.valentine-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #ff9a9e, #fad0c4);
+  opacity: 0.2;   /* 20% opacity */
+  z-index: -1;
+  pointer-events: none;
+}
+
+
+/* Music Section - Instagram Stories Style */
+.music-section {
+  width: 100%;
+  max-width: 300px;
+  margin-top: 50px;
+}
+
+.music-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffffa1;
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  position: relative;
+}
+
+.music-cover {
+  width: 250px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 5px solid #ff80ab;
+}
+
+.music-info {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.music-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #e91e63;
+  margin-bottom: 15px;
+}
+
+.music-btn {
+  background-color: #ff80ab;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.music-btn:hover {
+  background-color: #ff4f8b;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Photo Gallery - Improved Image Fit */
+.gallery-section {
+  width: 80%;
+  max-width: 450px; /* Matches thinned music card */
+  margin: 20px auto;
+  color: white;
+  padding: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  /* max-height: 600px; */
+  background: linear-gradient(145deg, #000000, #ffffff);
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  overflow: hidden;
+}
+
+.carousel .slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.carousel .slide img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;  /* Ensures images fit perfectly */
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  opacity: 95%;
+}
+
+.carousel .slide img:hover {
+  transform: scale(1.05);
+}
+
+/* Game Section - Question Color */
+.question-card h3 {
+  color: #000; /* Black for better readability */
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+
+/* Game Section - Updated */
+.game-section h2 {
+  color: #b30000;
+  margin-bottom: 15px;
+  font-family: 'Cursive', sans-serif;
+}
+
+.question-card h3 {
+  color: #000; /* Changed to black */
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Proposal Section */
+.proposal-section {
+  margin: 30px 0;
+}
+
+.proposal-btn {
+  background-color: #ff4d4d;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1.3em;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.proposal-btn:hover {
+  background-color: #ff1a1a;
+  transform: scale(1.1);
+}
+
+/* Popup Overlay */
+.popup-overlay2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.popup-content2 {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  width: 80%;
+  max-width: 400px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  animation: popup 0.5s;
+}
+
+@keyframes popup {
+  from { transform: scale(0.5); }
+  to { transform: scale(1); }
+}
+
+.popup-content h3 {
+  color: #b30000;
+  margin-bottom: 20px;
+}
+
+.popup-btn {
+  background-color: #ff8080;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 15px;
+  cursor: pointer;
+  margin: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.popup-btn:hover {
+  background-color: #ff4d4d;
+  transform: scale(1.1);
+}
+
+/* Game Section */
+.play-game-btn{
+  margin-bottom: 20px;
+  background-color: yellow;
+  color: black;
+}
+.game-section {
+  margin: 30px 0;
+  /* width: 80%; */
+  /* max-width: 400px; */
+  background: #ffe6e6;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Game Section - Updated */
+.game-section h2 {
+  color: #b30000;
+  margin-bottom: 15px;
+  font-family: 'Cursive', sans-serif;
+}
+
+.question-card h3 {
+  color: #000; /* Changed to black */
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.question-card {
+  margin: 15px 0;
+}
+
+.option-btn {
+  background-color: #ffcccb;
+  color: #b30000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+.option-btn:hover {
+  background-color: #ffb3b3;
+}
+
+.option-btn.correct {
+  background-color: #4caf50;
+  color: white;
+}
+
+.option-btn.incorrect {
+  background-color: #f44336;
+  color: white;
+}
+
+.submit-btn {
+  background-color: #ff4d4d;
+  color: white;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1.1em;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #ff1a1a;
+}
+
+/* Tic-Tac-Toe Styles */
+.tic-tac-toe {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  gap: 10px;
+  justify-content: center;
+  margin: 20px;
+}
+
+.tic-tac-toe-cell {
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  border: 2px solid #ff4d4d;
+  color: #ff4d4d;
+  font-size: 2em;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 10px;
+}
+
+.tic-tac-toe-cell:hover {
+  background-color: #ffe6e6;
+}

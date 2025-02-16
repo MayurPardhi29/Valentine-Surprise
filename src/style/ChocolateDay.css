@@ -1,0 +1,283 @@
+.chocolate-day-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+    color: #fff;
+    overflow: hidden;
+  }
+  
+  /* Background Overlay */
+  .chocolate-day-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      135deg,
+      rgba(156, 86, 0, 0.8) 0%,
+      rgba(81, 11, 11, 0.1) 100%
+    ), 
+    url('E:\Surprise\surprise\public\assets\19.jpeg'); /* Use forward slashes for correct path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    border-radius: 48px;
+    opacity: 0.6; /* Adjust opacity as needed */
+    z-index: -1; /* Ensures it stays behind content */
+  }
+  
+  /* Add a subtle glow effect */
+  .chocolate-day-container h1 {
+    font-size: 2.5rem;
+    /* text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); */
+  }
+  
+  /* Message Box Styling */
+  .message-box {
+    background: rgba(255, 192, 203, 0.674);
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    text-align: center;
+    width: 80%;
+    color: rgb(149, 89, 0);
+    max-width: 600px;
+    margin-top: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Card Container */
+  .card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  /* Chocolate Card */
+  .choco-card {
+    width: 180px;
+    height: 250px;
+    perspective: 1000px;
+    cursor: pointer;
+    transition: transform 0.4s ease-in-out;
+  }
+  
+  .choco-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+  }
+  
+  .flipped .card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .card-front,
+  .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  }
+  
+  .card-front {
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .card-back {
+    background: rgb(169, 117, 117);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotateY(180deg);
+    padding: 5px;
+    font-size: 1.1rem;
+    text-align: center;
+    gap: 2px;
+    margin-bottom: 20px;
+  }
+  
+  /* Navigation Buttons */
+  .button-container {
+    margin-top: 20px;
+  }
+  
+  .back-button,
+  .next-button {
+    background: #b04e0f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    margin: 10px;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .back-button:hover,
+  .next-button:hover {
+    background: #913d0e;
+  }
+  
+  /* Random Button */
+.surprise-button {
+  position: absolute;
+  background: chocolate;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.1s ease-in-out;
+}
+
+.surprise-button:hover {
+  transform: scale(1.1);
+  background: #a0522d;
+}
+
+/* Surprise Image & Text */
+.surprise-content {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.surprise-image {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.surprise-text {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: white;
+  margin-top: 10px;
+}
+
+/* Random Floating Button */
+.surprise-button {
+  position: absolute;
+  background: rgba(210, 105, 30, 0.066);
+  color: white;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, top 0.5s ease-in-out, left 0.5s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.surprise-button:hover {
+  transform: scale(1.1);
+  background: #775a4c56;
+}
+
+/* Dim background overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* Dim effect */
+  z-index: 9998; /* Below pop-up but above page */
+}
+
+/* Pop-up Surprise */
+.surprise-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.5s ease-in-out;
+  z-index: 9999; /* Above overlay */
+}
+
+/* Centering pop-up content */
+.popup-content {
+  position: relative;
+  text-align: center;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: white;
+  color: black;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Surprise image */
+.surprise-image {
+  width: 250px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Surprise text */
+.surprise-text {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: rgb(96, 23, 23);
+  margin-top: 10px;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -55%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}

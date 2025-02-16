@@ -1,0 +1,223 @@
+/* Background Styling */
+.propose-day {
+    min-height: 100vh;
+    /* background: url('E:\Surprise\surprise\public\assets\2.jpg') center/cover no-repeat; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    overflow: auto;
+    color: #5a1e1e; /* Dark Red for readability */
+  }
+  
+  /* Header */
+  h1 {
+    font-size: 3rem;
+    font-family: 'Georgia', serif;
+    color: #b22222; /* Deep Red */
+  }
+  
+  h3 {
+    font-size: 2rem;
+    color: #bd91ba;
+    margin-bottom: 15px;
+    white-space: nowrap;      /* Prevents line breaks */
+    overflow: hidden;         /* Hides overflow */
+    text-overflow: ellipsis;  /* Adds "..." if content overflows */
+  }
+  
+  
+  /* Proposal Image */
+  .proposal-section {
+    margin: 20px 0;
+  }
+  
+  .proposal-img {
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1.5);
+    opacity: 95%;
+  }
+  
+  /* Poem Section */
+  .poem-section {
+    font-size: 1.3rem;
+    background: rgba(255, 182, 193, 0.2); /* Soft pink */
+    padding: 15px;
+    border-radius: 8px;
+    width: 70%;
+    margin-bottom: 20px;
+    color: #800000; /* Dark Maroon */
+  }
+  
+  /* Yes Button Styling */
+  .yes-button-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .yes-button {
+    background: #06130b;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .yes-button:hover {
+    background: #e63950;
+    transform: scale(1.1);
+  }
+  
+  /* Popup Message */
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .popup-content {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    animation: popUp 0.4s ease-in-out;
+  }
+  
+  .love-img {
+    width: 300px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .popup-content h2 {
+    color: #ff4d6d;
+    font-size: 1.5rem;
+  }
+  
+  .close-popup {
+    background: #ff4d6d;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .close-popup:hover {
+    background: #e63950;
+    transform: scale(1.05);
+  }
+  
+  /* Music Section Styling */
+  .music-section {
+    text-align: center;
+    margin-top: 40px;
+  }
+  /* Music Button */
+  .music-btn {
+    background: gold;
+    color: darkred;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 2px 5px rgba(255, 215, 0, 0.4);
+  }
+  
+  .music-btn:hover {
+    background: crimson;
+    color: white;
+    box-shadow: 0 4px 10px rgba(220, 20, 60, 0.6);
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes popUp {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  
+  .love-letter-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .reveal-letter-btn {
+    background: linear-gradient(45deg, #ff758c, #ff7eb3);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: 'Dancing Script', cursive; /* Romantic script font */
+  }
+  
+  .reveal-letter-btn:hover {
+    background: linear-gradient(45deg, #ff4e6d, #ff6680);
+  }
+  
+  .love-letter {
+    position: relative; /* Ensure positioning for the pseudo-element */
+    padding: 30px;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    color: #5a2a2a;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.7s ease-in-out, opacity 0.7s ease-in-out;
+    font-family: 'Great Vibes', cursive; /* Adds a handwritten letter look */
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
+    width: 80%;
+    margin: 20px auto;
+    border: 2px solid #b38b6d; /* Classic paper-like border */
+  }
+  
+  /* Pseudo-element for the background */
+  .love-letter::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('E:\\Surprise\\surprise\\public\\assets\\9.jpg') no-repeat center center;
+    background-size: cover;
+    opacity: 0.3; /* Adjust this value to control the background opacity */
+    border-radius: 15px;
+    z-index: -1; /* Place it behind the content */
+  }
+  
+  .love-letter.show {
+    opacity: 1;
+    max-height: 1000px;
+  }
+  

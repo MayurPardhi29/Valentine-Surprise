@@ -1,0 +1,117 @@
+/* Rose Day Page Styling */
+.rose-day-bg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* background: linear-gradient(to bottom, #ffcccc, #ff99aa); */
+    padding: 20px;
+  }
+  
+  .masking-text{
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block; /* Ensures it respects size */
+    font-size: 100px; /* Increase size */
+    font-weight: bold; /* Make text stand out */
+    text-transform: uppercase; /* Optional for better visibility */
+  }
+  
+  .masking-text span {
+    -webkit-text-fill-color: initial; /* Reset to default text color */
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 140px; /* Make the rose emoji bigger */
+  }
+  
+  .content-page {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    text-align: center;
+    position: relative;
+    z-index: -1;
+    opacity: 90%;
+  }
+  
+  .rose-day-content {
+    margin-top: 10px;
+  }
+  
+  .rose-day-content p {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.6;
+    font-weight: bold;
+  }
+  
+  .rose-day-content ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .rose-day-content li {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #d63031;
+    margin: 5px 0;
+  }
+  
+  /* Rose Image Styling */
+  .rose-image-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .rose-image-wrapper img {
+    max-width: 50%;
+    height: auto;
+    border-radius: 15px;
+    opacity: 0.9;
+  }
+  
+  .rose-image-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+  }
+  
+  /* Adjusted styling for the main rose image */
+  .main-rose-image {
+    width: 50%;
+  }
+  
+  /* Poem container with flexbox for alignment */
+  .poem-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* gap: 20px; */
+    text-align: center;
+  }
+  
+  /* Styling for poem images */
+  .poem-image {
+    width: 150px; /* Adjust size as needed */
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  /* Align left and right images */
+  .poem-image.left {
+    order: -1; /* Moves image1 to the left */
+  }
+  
+  .poem-image.right {
+    order: 1; /* Moves image2 to the right */
+  }

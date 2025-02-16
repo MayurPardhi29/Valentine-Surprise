@@ -1,0 +1,92 @@
+import React, { useRef, useEffect } from "react";
+import { useLocation } from 'react-router-dom';
+
+import "../style/KissDay.css";
+
+const KissDay = () => {
+  const audioRef = useRef(new Audio(process.env.PUBLIC_URL + "/assets/Jasmine.mp3"));
+
+  useEffect(() => {
+    audioRef.current.play();
+    audioRef.current.loop = true;
+    return () => audioRef.current.pause();
+  }, []);
+
+  const videos = [
+    // "/assets/kissvdo1.mp4",
+    // "/assets/kissvdo3.mp4",
+    // "/assets/kissvdo2.mp4"
+
+    "/assets/3.mp4",
+    "/assets/2.mp4",
+    "/assets/4.mp4"
+  ];
+
+  const images = [
+    "/assets/kissimg1.jpg",
+    "/assets/kissimg2.webp",
+    "/assets/kissimg3.jpg",
+    // "/assets/4.jpg"
+  ];
+
+  const handleMouseEnter = (event) => {
+    const video = event.target;
+    setTimeout(() => {
+      video.play().catch((error) => {
+        console.error("Error playing video:", error);
+      });
+    }, 200); // Small delay to prevent rapid play-pause
+  };
+
+  const handleMouseLeave = (event) => {
+    event.target.pause();
+  };
+
+  return (
+    <div className="kiss-day-page">
+      <h1 className="title">Happy Kiss Day 💋</h1>
+      <p className="description">
+        A kiss is a whisper of love, a gentle touch of affection, and a promise of forever. 
+        It speaks the language of the heart, louder than words. 
+        May this Kiss Day bring you endless smiles and cherished moments!
+      </p>
+
+      {/* <div className="video-section">
+        <video className="background-video" autoPlay loop muted>
+          <source src={process.env.PUBLIC_URL + "/assets/sample.mp4"} type="video/mp4" />
+        </video>
+      </div> */}
+
+      <h2 className="sub-title">Memorable Moments</h2>
+      <div className="video-scroller">
+        {videos.map((video, index) => (
+          <video
+            key={index}
+            className="scroller-video"
+            muted
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            loop
+          >
+            <source src={process.env.PUBLIC_URL + video} type="video/mp4" />
+          </video>
+        ))}
+      </div>
+
+      <h2 className="sub-title">Captured Emotions</h2>
+      <div className="image-scroller">
+        {images.map((img, index) => (
+          <img key={index} src={process.env.PUBLIC_URL + img} alt={`Memory ${index + 1}`} className="scroller-image" />
+        ))}
+      </div>
+
+      <div className="falling-kisses">
+        {Array.from({ length: 30 }).map((_, index) => (
+          <span key={index} className="kiss">💋</span>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default KissDay;

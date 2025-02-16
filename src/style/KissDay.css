@@ -1,0 +1,199 @@
+.kiss-day-page {
+    text-align: center;
+    font-family: 'Georgia', serif;
+    color: #fff;
+    background: radial-gradient(circle, #0b0f33 60%, #000000 100%);
+    overflow-x: hidden;
+    padding: 20px;
+    min-height: 100vh;
+  }
+  
+  .header-kiss {
+    font-size: 2.5rem;
+    color: #ff4b2b;
+    text-align: center;
+    margin-top: 20px;
+    text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1.5s ease;
+    font-family: 'Cursive', sans-serif;
+  }
+  
+  .kiss-description {
+    font-size: 1.1rem;
+    color: #fff;
+    text-align: center;
+    line-height: 1.6;
+    margin: 15px auto;
+    width: 85%;
+    max-width: 600px;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: slideIn 1.8s ease;
+    backdrop-filter: blur(6px);
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }  
+  
+  .video-section {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin: 30px 0;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .background-video {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+  }
+  
+  .sub-title {
+    font-size: 28px;
+    margin: 30px 0 10px;
+    color: #ff85a2;
+    animation: fadeIn 2s ease forwards;
+  }
+  
+  .video-scroller, .image-scroller {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 20px;
+    gap: 20px;
+    scrollbar-width: thin;
+  }
+  
+  .video-scroller::-webkit-scrollbar, .image-scroller::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  .video-scroller::-webkit-scrollbar-thumb, .image-scroller::-webkit-scrollbar-thumb {
+    background: #ff85a2;
+    border-radius: 4px;
+  }
+  
+  .scroller-video {
+    width: 100%;
+    height: 270px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+    object-fit:cover;
+    transform: rotate(-90deg);
+  }
+  
+  .scroller-video:hover {
+    transform: scale(1.05);
+    transform: rotate(-90deg);
+  }
+  
+  .scroller-image {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+  }
+  
+  .scroller-image:hover {
+    transform: scale(1.05);
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+/* Falling complimentes */
+.falling-compliment {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.compliment {
+    position: absolute;
+    top: -50px;
+    font-size: 24px;
+    opacity: 0.9;
+    animation: fall linear infinite;
+}
+
+/* Random Position and Animation */
+.compliment:nth-child(1) {
+    left: 10%;
+    animation-duration: 17s;
+    animation-delay: 4s;
+}
+
+.compliment:nth-child(3) {
+    left: 30%;
+    animation-duration: 16s;
+    animation-delay: 13s;
+}
+
+.compliment:nth-child(5) {
+    left: 50%;
+    animation-duration: 10s;
+    animation-delay: 2.5s;
+}
+
+.compliment:nth-child(7) {
+    left: 70%;
+    animation-duration: 11s;
+    animation-delay: 4s;
+}
+
+.compliment:nth-child(9) {
+    left: 90%;
+    animation-duration: 8.5s;
+    animation-delay: 1s;
+}
+
+/* Falling Animation */
+@keyframes fall {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
