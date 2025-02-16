@@ -15,7 +15,7 @@ const RoseDay = () => {
           </h2>
 
           <div className="poem-container">
-            <img src="/assets/Single-Rose.jpg" alt="Rose Image 1" className="poem-image left" />
+            <img src="/assets/Single-Rose.jpg" alt="Rose 1" className="poem-image left" />
             <div className="poem-text">
               <p>
                 On this day of love so true, <br />
@@ -42,7 +42,7 @@ const RoseDay = () => {
                 With you on this Rose Day! <br />
               </p>
             </div>
-            <img src="/assets/Single-Rose.jpg" alt="Rose Image 2" className="poem-image right" />
+            <img src="/assets/Single-Rose.jpg" alt="Rose 2" className="poem-image right" />
           </div>
         </div>
       </div>

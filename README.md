@@ -1,4 +1,4 @@
-# 🎉 Valentine Week - Surprise ❤️  
+# 🎉 Valentine - Surprise ❤️  
 
 An interactive  Valentine Week  celebration page built with  React.js , featuring surprises for each day of Valentine’s week, animations, music, and fun interactions. 🎶✨  
 
@@ -35,11 +35,6 @@ npm install
 
 ###  3️⃣ Install Required Libraries   
 The project uses several additional libraries:  
-
--  Emoji Support  (For enhanced emoji display)  
-  ``` 
-  npm install emoji-mart
-  ```
 
 -  React Router  (For managing page navigation)  
   ``` 
